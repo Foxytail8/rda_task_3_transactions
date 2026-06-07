@@ -2,7 +2,8 @@
 USE ShopDB; 
 
 -- Some data should be created outside the transaction (here)
-
+DROP DATABASE ShopDB;
+source ./create-database.sql
 -- Start the transaction 
 START TRANSACTION; 
 
