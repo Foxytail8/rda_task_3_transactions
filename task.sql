@@ -48,10 +48,11 @@ INSERT INTO Products (Name, Description, Price, WarehouseAmount)
 INSERT INTO Customers (FirstName, LastName, Email, Address)
 	VALUES ('John', 'Dou', 'j@dou.ua', 'far, far away');
 
+
+INSERT INTO Orders (CustomerID, Date) VALUES (1, '2023-01-01');
 -- Start the transaction 
 START TRANSACTION; 
 
-INSERT INTO Orders (CustomerID, Date) VALUES (1, '2023-01-01');
 INSERT INTO OrderItems (OrderID, ProductID, Count) 
 VALUES (LAST_INSERT_ID(), 1, 1);
 UPDATE Products SET WarehouseAmount = WarehouseAmount - 1 WHERE ID = 1;
